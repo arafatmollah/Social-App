@@ -1,6 +1,6 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { AccountService } from '../../../core/services/account-service';
+import { AccountService } from '../../core/services/account-service';
 
 @Component({
   selector: 'app-nav',
@@ -15,8 +15,7 @@ export class Nav {
   login() {
     this.accountService.login(this.creds).subscribe({
       next: (result: any) => {
-        console.log(result), 
-        this.creds={}
+        console.log(result), (this.creds = {});
       },
       error: (error: any) => alert('not found'),
     });
