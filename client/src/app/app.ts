@@ -5,10 +5,11 @@ import { AccountService } from '../core/services/account-service';
 import { Home } from '../features/home/home';
 import { Nav } from '../layout/nav/nav';
 import { User } from '../types/user';
+import { Router, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [Nav, Home],
+  imports: [Nav, RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
@@ -16,6 +17,7 @@ export class App implements OnInit {
   private http = inject(HttpClient);
   private accountService = inject(AccountService);
   protected title = 'Social App';
+  protected router = inject(Router);
   protected members = signal<User[]>([]);
 
   async ngOnInit() {
