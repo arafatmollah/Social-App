@@ -7,6 +7,7 @@ import { Home } from '../features/home/home';
 import { List } from '../features/list/list';
 import { authGuard } from '../core/guards/auth-guard';
 import { TestErrors } from '../features/test-errors/test-errors';
+import { Notfound } from '../shared/notfound/notfound';
 
 export const routes: Routes = [
   { path: '', component: Home },
@@ -22,5 +23,5 @@ export const routes: Routes = [
     ],
   },
   {path:'errors', component: TestErrors},
-  {path:'**', component: Home}
+  {path:'**', component: Notfound}
 ];
