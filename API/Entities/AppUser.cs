@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace API.Entities;
 
@@ -10,4 +11,6 @@ public class AppUser
 
     public required byte[] PasswordHash { get; set; }
     public required byte[] PasswordSalt { get; set; }
+
+    public Member? Member { get; set; }
 }
